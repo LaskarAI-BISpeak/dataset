@@ -7,7 +7,7 @@ Untuk mengatasi ketidakseimbangan data, dilakukan augmentasi pada data pelatihan
 
 <!-- ## Link Dataset
 Anda dapat mengunduh dataset lengkap melalui tautan Google Drive berikut:  
-👉 [Google Drive - BISINDO Dataset](https://drive.google.com/drive/folders/your_dataset_folder_link_here)
+👉 [Google Drive - BISINDO Dataset](https://drive.google.com/file/d/1q59r6q-4YTB6e4psSmfWj5dEvLr_dLPF/view?usp=drive_link)
 
 > _Gantilah link di atas dengan URL folder dataset Anda._
  -->
