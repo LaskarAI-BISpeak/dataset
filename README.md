@@ -11,7 +11,7 @@ Dataset mencakup:
   - **20 kelas kosa kata umum** (misalnya: *makan*, *minum*, *ayah*, *ibu*, dll)
 - Total lebih dari **23.000 gambar gesture**
 - Jumlah gambar per kelas: ±500 hingga 1.000
-- Semua data dikumpulkan melalui dokumentasi langsung dan pelabelan manual oleh tim
+- Semua data dikumpulkan melalui dokumentasi langsung dan pelabelan mandiri oleh tim
 
 ---
 
@@ -70,9 +70,22 @@ labels_dict = {
 ## 🖼️ Format dan Isi Dataset
 
 - Format gambar: `.jpg`
-- Setiap folder merepresentasikan satu kelas gesture berdasarkan **kode angka** (untuk huruf) atau **nama kata** (untuk kosa kata umum)
-- Semua gambar merupakan hasil dokumentasi langsung, menggunakan satu atau dua tangan sesuai kebutuhan gesture
-- File `.pickle` berisi array dari **21 koordinat landmark tangan (x, y, z)** hasil ekstraksi dari gambar menggunakan **MediaPipe Hands**
+- Setiap folder merepresentasikan satu kelas gesture, dengan format penamaan:
+  - **Kode angka (0–25)** untuk huruf alfabet A–Z (tidak berurutan, lihat label pada bagian sebelumnya)
+  - **Nama kata** untuk kosa kata umum seperti `MAKAN`, `MINUM`, `SAYA`, dll.
+- Dataset terbagi menjadi dua jenis berdasarkan jumlah gesture tangan:
+  - `dataset_1_tangan/` untuk gesture satu tangan
+  - `dataset_2_tangan/` untuk gesture dua tangan
+
+### 🧠 Ekstraksi Fitur
+
+Dari setiap gambar dalam dataset, kami melakukan ekstraksi **21 titik koordinat (landmark) tangan** menggunakan **MediaPipe Hands**.
+Hasil ekstraksi disimpan dalam dua file `.pickle`:
+
+- `data_1_tangan.pickle` — berisi array landmark dari gambar satu tangan
+- `data_2_tangan.pickle` — berisi array landmark dari gambar dua tangan
+
+File `.pickle` ini digunakan sebagai **fitur input** utama untuk pelatihan model klasifikasi gesture BISINDO dalam proyek BISpeak.
 
 ---
 
